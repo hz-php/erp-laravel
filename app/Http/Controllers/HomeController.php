@@ -26,7 +26,8 @@ class HomeController extends Controller
     {
         if (\Auth::check()) {
             $users = User::all();
-            return view('home', compact('users'));
+            $paginator = User::paginate(10);
+            return view('home', compact('users', 'paginator'));
         } else {
             return view('auth.login');
         }

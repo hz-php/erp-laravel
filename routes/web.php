@@ -16,10 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('auth.login');
 });
-Route::get('/registration', function (){
-    return view('auth.register');
-});
+Route::get('/registration', 'App\Http\Controllers\Auth\UsersController@create')->name('formregister');
 Auth::routes();
+
+Route::post('/register', 'App\Http\Controllers\Auth\UsersController@store')->name('register');
+Route::get('/register/{id}', 'App\Http\Controllers\Auth\UsersController@edit')->name('edit');
+Route::patch('/update/{id}', 'App\Http\Controllers\Auth\UsersController@update')->name('update');
+Route::delete('/delete/{id}', 'App\Http\Controllers\Auth\UsersController@destroy')->name('delete');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
