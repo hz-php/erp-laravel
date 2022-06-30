@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\City;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -69,7 +70,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        //
+   //
     }
 
     /**
@@ -81,7 +82,8 @@ class UsersController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        return view('auth.edit', compact('user'));
+        $cities = City::all();
+        return view('auth.edit', compact('user', 'cities'));
     }
 
     /**

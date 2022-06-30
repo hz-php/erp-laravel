@@ -21,6 +21,7 @@ Auth::routes();
 
 Route::post('/register', 'App\Http\Controllers\Auth\UsersController@store')->name('register');
 Route::get('/register/{id}', 'App\Http\Controllers\Auth\UsersController@edit')->name('edit');
+//Route::get('/show', 'App\Http\Controllers\Auth\UsersController@show')->name('show');
 Route::patch('/update/{id}', 'App\Http\Controllers\Auth\UsersController@update')->name('update');
 Route::delete('/delete/{id}', 'App\Http\Controllers\Auth\UsersController@destroy')->name('delete');
 
