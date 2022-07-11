@@ -46,5 +46,10 @@ Route::delete('/delete_worker/{id}', 'App\Http\Controllers\Work\WorkerController
 Route::get('worker/', 'App\Http\Controllers\Work\WorkerController@index')->name('worker_show');
 Route::get('worker_form/', 'App\Http\Controllers\Work\WorkerController@create')->name('worker_form');
 
+Route::get('clients/', 'App\Http\Controllers\Clients\ClientController@index')->name('clients_show');
+Route::get('client_create/', 'App\Http\Controllers\Clients\ClientController@create')->name('create_client');
+Route::post('client_store/', 'App\Http\Controllers\Clients\ClientController@store')->name('client_store');
+Route::post('client_show/', 'App\Http\Controllers\Clients\ClientController@show')->name('show_client');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
