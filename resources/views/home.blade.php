@@ -47,7 +47,8 @@
                                     <td>{{ $user->created_at }}</td>
                                     <td>{{ $user->updated_at }}</td>
                                     <td>
-                                        <a href={{ route('edit', $user->id) }}"><img src="{{asset('img/edit.png')}}"
+                                        <a href="{{ route('edit', $user->id) }}">
+                                        <img src="{{asset('img/edit.png')}}"
                                         alt="Изменить" title="Изменить" width="20px"></a>
                                     </td>
                                     <td>

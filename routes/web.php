@@ -36,7 +36,7 @@ Route::get('/edit_worker/{id}', 'App\Http\Controllers\Work\WorkerController@edit
 Route::get('/show/{id}', 'App\Http\Controllers\Auth\UsersController@show')->name('show');
 Route::get('/worker_show/{id}', 'App\Http\Controllers\Work\WorkerController@show')->name('worker_show');
 
-Route::patch('/update/{id}', 'App\Http\Controllers\Auth\UsersController@update')->name('update');
+Route::patch('/update/{id}', 'App\Http\Controllers\Auth\UsersController@update')->name('update_user');
 Route::patch('/update/{id}', 'App\Http\Controllers\Work\WorkerController@update')->name('worker_update');
 
 Route::delete('/delete/{id}', 'App\Http\Controllers\Auth\UsersController@destroy')->name('delete');
@@ -50,6 +50,7 @@ Route::get('clients/', 'App\Http\Controllers\Clients\ClientController@index')->n
 Route::get('client_create/', 'App\Http\Controllers\Clients\ClientController@create')->name('create_client');
 Route::post('client_store/', 'App\Http\Controllers\Clients\ClientController@store')->name('client_store');
 Route::post('client_show/', 'App\Http\Controllers\Clients\ClientController@show')->name('show_client');
+Route::post('edit_show/', 'App\Http\Controllers\Clients\ClientController@edit')->name('edit_client');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

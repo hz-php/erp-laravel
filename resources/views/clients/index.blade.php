@@ -44,6 +44,9 @@
                                     <td><a href="mailto:{{ $client->email }}"><b>{{ $client->email }}</b></a></td>
                                     <td>{{ $client->city }}</td>
                                     <td>{{ $client->created_at }}</td>
+                                    <td>{{ $client->created_by_whom }}</td>
+
+
                                     <td>{{ $client->updated_at }}</td>
                                     <td>
                                         <a href={{ route('edit', $client->id) }}"><img src="{{asset('img/edit.png')}}"

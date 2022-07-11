@@ -9,7 +9,7 @@
                     <div class="card-header">Редактирование пользователя</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('update', $user->id) }}">
+                        <form method="POST" action="update/{{ $user->id }}">
                             @csrf
                             @method('PATCH')
                             <div class="row mb-3">

@@ -84,7 +84,10 @@ class ClientController extends Controller
      */
     public function edit($id)
     {
-        //
+        $client = Clients::findOrFail($id);
+        $cities = City::all();
+
+        return view('clients.edit', compact('client', 'cities'));
     }
 
     /**
@@ -96,7 +99,15 @@ class ClientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $client = Clients::find($id);
+        $clientr->name = $request->name;
+        $user->phone = $request->phone;
+        $user->email = $request->email;
+        $user->city = $request->city;
+        $user->role = $request->role;
+
+        $user->update();
+        return redirect(route('home'));
     }
 
     /**

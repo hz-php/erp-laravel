@@ -18,7 +18,16 @@ return new class extends Migration
             $table->string('name');
             $table->string('middle_name');
             $table->string('surname');
+            $table->date('birthday');
             $table->string('phone');
+            $table->string('male');
+            $table->string('specialization');
+
+            $table->string('ser_pasp');
+            $table->string('num_pasp');
+            $table->string('nat_pasp');
+            $table->date('date_pasp');
+            $table->string('who_pasp');
 
             $table->string('city');
 

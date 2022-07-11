@@ -19,21 +19,48 @@
                                 <label for="name" class="col-md-4 col-form-label text-md-end">Имя</label>
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control " name="name"
-                                           value="{{ old('name') }}" required>
+                                            required>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="middle_name" class="col-md-4 col-form-label text-md-end">Отчество</label>
                                 <div class="col-md-6">
                                     <input id="middle_name" type="text" class="form-control " name="middle_name"
-                                           value="{{ old('middle_name') }}" required>
+                                           required>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="surname" class="col-md-4 col-form-label text-md-end">Фамилия</label>
                                 <div class="col-md-6">
                                     <input id="surname" type="text" class="form-control " name="surname"
-                                           value="{{ old('surname') }}" required>
+                                            required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="birthday" class="col-md-4 col-form-label text-md-end">Дата рождения</label>
+                                <div class="col-md-6">
+                                    <input id="birthday" type="date" class="form-control " name="birthday"
+                                           required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="email" class="col-md-4 col-form-label text-md-end">Пол</label>
+
+                                <div class="col-md-6">
+                                    <select class="form-select" id="city" aria-label="Default select example"
+                                            name="male">
+                                        <option value="" default>Пол</option>
+                                        <option value="Мужской">Мужской</option>
+                                        <option value="Женский">Женский</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="specialization" class="col-md-4 col-form-label text-md-end">Специальность</label>
+                                <div class="col-md-6">
+                                    <input id="specialization" type="text" class="form-control " name="specialization"
+                                           required>
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -56,7 +83,43 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col mb-3 ">
+                            <h4 style="text-align: center; margin-bottom: 10px;"> <b>Паспортные данные</b> </h4>
+                            <div class="col mb-3 " id="pasp_dn">
+                                <div class="row mb-3">
+                                    <label for="ser_pasp" class="col-md-4 col-form-label text-md-end">Серия паспорта: </label>
+                                    <div class="col-md-6">
+                                        <input id="ser_pasp" type="text" class="form-control " name="ser_pasp"
+                                               required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="num_pasp" class="col-md-4 col-form-label text-md-end">Номер паспорта: </label>
+                                    <div class="col-md-6">
+                                        <input id="num_pasp" type="text" class="form-control " name="num_pasp"
+                                                required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="date_pasp" class="col-md-4 col-form-label text-md-end">Дата выдачи: </label>
+                                    <div class="col-md-6">
+                                        <input id="date_pasp" type="date" class="form-control " name="date_pasp"
+                                               required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="nat_pasp" class="col-md-4 col-form-label text-md-end">Национальность: </label>
+                                    <div class="col-md-6">
+                                        <input id="nat_pasp" type="text" class="form-control " name="nat_pasp"
+                                               required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="date_pasp" class="col-md-4 col-form-label text-md-end">Кем выдан: </label>
+                                    <div class="col-md-6">
+                                        <input id="who_pasp" type="text" class="form-control " name="who_pasp"
+                                               required>
+                                    </div>
+                                </div>
                                 <div class="row-cols-md-3">
                                     <label for="file">Скан стр.1</label>
                                     <input type="file" name="image" id="file" class="form-control" required>

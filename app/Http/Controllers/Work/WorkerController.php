@@ -44,8 +44,17 @@ class WorkerController extends Controller
         $name = $request->input('name');
         $middle_name = $request->input('middle_name');
         $surname = $request->input('surname');
+        $birthday = $request->input('birthday');
+        $male = $request->input('male');
+        $specialization = $request->input('specialization');
         $phone = $request->input('phone');
         $city = $request->input('city');
+        $ser_pasp = $request->input('ser_pasp');
+        $num_pasp = $request->input('num_pasp');
+        $date_pasp = $request->input('date_pasp');
+        $nat_pasp = $request->input('nat_pasp');
+        $who_pasp = $request->input('who_pasp');
+
         $scan_one = $request->file('image')->store('uploads', 'public');
         $scan_two = $request->file('image_2')->store('uploads', 'public');
         $scan_three = $request->file('image_3')->store('uploads', 'public');
@@ -54,8 +63,16 @@ class WorkerController extends Controller
         $item->name = $name;
         $item->middle_name = $middle_name;
         $item->surname = $surname;
+        $item->birthday = $birthday;
+        $item->male = $male;
+        $item->specialization = $specialization;
         $item->phone = $phone;
         $item->city = $city;
+        $item->ser_pasp = $ser_pasp;
+        $item->num_pasp = $num_pasp;
+        $item->date_pasp = $date_pasp;
+        $item->nat_pasp = $nat_pasp;
+        $item->who_pasp = $who_pasp;
         $item->scan_one = $scan_one;
         $item->scan_two = $scan_two;
         $item->scan_three = $scan_three;
@@ -109,8 +126,16 @@ class WorkerController extends Controller
         $name = $request->input('name');
         $middle_name = $request->input('middle_name');
         $surname = $request->input('surname');
+        $birthday = $request->input('birthday');
+        $male = $request->input('male');
+        $specialization = $request->input('specialization');
         $phone = $request->input('phone');
         $city = $request->input('city');
+        $ser_pasp = $request->input('ser_pasp');
+        $num_pasp = $request->input('num_pasp');
+        $date_pasp = $request->input('date_pasp');
+        $nat_pasp = $request->input('nat_pasp');
+        $who_pasp = $request->input('who_pasp');
         if (!empty($request->file('image'))) {
             $scan_one = $request->file('image')->store('uploads', 'public');
         } else {
@@ -130,10 +155,18 @@ class WorkerController extends Controller
         $item->name = $name;
         $item->middle_name = $middle_name;
         $item->surname = $surname;
+        $item->birthday = $birthday;
+        $item->male = $male;
+        $item->specialization = $specialization;
         $item->phone = $phone;
         $item->city = $city;
+        $item->ser_pasp = $ser_pasp;
+        $item->num_pasp = $num_pasp;
+        $item->date_pasp = $date_pasp;
+        $item->nat_pasp = $nat_pasp;
+        $item->who_pasp = $who_pasp;
         $item->scan_one = $scan_one;
-        $item->scan_two = $scan_two ;
+        $item->scan_two = $scan_two;
         $item->scan_three = $scan_three;
         $item->created_by_whom = $user->name;
         $item->update();
