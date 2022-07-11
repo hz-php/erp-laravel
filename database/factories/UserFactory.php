@@ -20,7 +20,7 @@ class UserFactory extends Factory
         return [
             'name' => fake()->name(),
             'email' => fake()->safeEmail(),
-            'city' => $this->faker->address,
+            'city' => $this->faker->city,
             'role' => 'manager',
             'phone' => $this->faker->e164PhoneNumber,
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
