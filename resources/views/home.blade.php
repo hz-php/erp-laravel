@@ -5,10 +5,15 @@
         $user_role = auth()->user();
         $role = $user_role->role;
     @endphp
-    @if($role == 'admin' || $role == 'Директор')
+    @if($role == 'Администратор')
 
         <div class="container">
-            <a href="{{route('formregister')}}" class="btn btn-primary ">Создать пользователя</a>
+            <div class="buttons">
+                <a href="{{route('formregister')}}" class="btn btn-primary ">Создать пользователя</a>
+
+                <a href="{{route('index_city')}}" class="btn btn-primary ">Смотреть города</a>
+                <a href="{{ route('worker_show')}}" class="btn btn-primary ">Смотреть рабочих</a>
+            </div>
             <br>
             <br>
             <div class="row justify-content-center">
@@ -34,19 +39,23 @@
                             @foreach($paginator as $user)
                                 <tr>
                                     <th scope="row">{{ $user->id }}</th>
-                                    <td>{{ $user->name }}</td>
+                                    <td><a href="{{ route('show', $user->id) }}"><b>{{ $user->name }}</b></a></td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->phone }}</td>
                                     <td>{{ $user->city }}</td>
                                     <td>{{ $user->role }}</td>
                                     <td>{{ $user->created_at }}</td>
                                     <td>{{ $user->updated_at }}</td>
-                                    <td><a href="/register/{{ $user->id }}"><img src="{{asset('img/edit.png')}}" alt="Изменить" title="Изменить" width="20px"></a></td>
+                                    <td>
+                                        <a href={{ route('edit', $user->id) }}"><img src="{{asset('img/edit.png')}}"
+                                        alt="Изменить" title="Изменить" width="20px"></a>
+                                    </td>
                                     <td>
                                         <form action="{{ route('delete', $user->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                        <button type="submit"><img src="{{asset('img/del.png')}}" alt="Удалить" title="Удалить" width="20px"></button>
+                                            <button type="submit"><img src="{{asset('img/del.png')}}" alt="Удалить"
+                                                                       title="Удалить" width="20px"></button>
                                         </form>
                                     </td>
                                 </tr>

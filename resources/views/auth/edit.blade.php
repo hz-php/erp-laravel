@@ -64,6 +64,7 @@
 {{--                                           value="{{ $user->city }}" required>--}}
                                     <select class="form-select" id="city" aria-label="Default select example"
                                             name="city">
+
                                         @foreach($cities as $city)
                                             <option value="{{ $city->city }}">{{ $city->city }}</option>
                                         @endforeach
@@ -77,11 +78,16 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="email" class="col-md-4 col-form-label text-md-end">Статус</label>
+                                <label for="role" class="col-md-4 col-form-label text-md-end">Статус</label>
 
                                 <div class="col-md-6">
-                                    <input id="email" type="text" class="form-control " name="role"
-                                           value="{{ $user->role }}" required autocomplete="email">
+                                    <select class="form-select" id="role" aria-label="Default select example"
+                                            name="role">
+                                        <option value="" default>Выберите статус</option>
+                                        @foreach($role_us as $role)
+                                            <option value="{{ $role->role_name }}">{{ $role->role_name }}</option>
+                                        @endforeach
+                                    </select>
 
                                     {{--                                @error('email')--}}
                                     {{--                                <span class="invalid-feedback" role="alert">--}}

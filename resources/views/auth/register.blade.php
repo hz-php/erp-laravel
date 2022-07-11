@@ -56,26 +56,26 @@
                             <label for="email" class="col-md-4 col-form-label text-md-end">Город</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="text" class="form-control " name="city" value="{{ old('city') }}" required autocomplete="email">
-
-                                {{--                                @error('email')--}}
-                                {{--                                <span class="invalid-feedback" role="alert">--}}
-                                {{--                                        <strong>{{ $message }}</strong>--}}
-                                {{--                                    </span>--}}
-                                {{--                                @enderror--}}
+                                <select class="form-select" id="city" aria-label="Default select example"
+                                        name="city">
+                                    <option value="" default>Выберите город</option>
+                                    @foreach($city as $city)
+                                        <option value="{{ $city->city }}">{{ $city->city }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">Статус</label>
+                            <label for="role" class="col-md-4 col-form-label text-md-end">Статус</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="text" class="form-control " name="role" value="{{ old('role') }}" required autocomplete="email">
-
-                                {{--                                @error('email')--}}
-                                {{--                                <span class="invalid-feedback" role="alert">--}}
-                                {{--                                        <strong>{{ $message }}</strong>--}}
-                                {{--                                    </span>--}}
-                                {{--                                @enderror--}}
+                                <select class="form-select" id="role" aria-label="Default select example"
+                                        name="role">
+                                    <option value="" default>Выберите статус</option>
+                                    @foreach($role_us as $role)
+                                        <option value="{{ $role->role_name }}">{{ $role->role_name }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                         <div class="row mb-3">
